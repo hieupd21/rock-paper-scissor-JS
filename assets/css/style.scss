@@ -1,0 +1,244 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Barlow', sans-serif;
+
+  button {
+    font-weight: 800;
+    font-size: 20px;
+    padding: 5px 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .main {
+      position: relative;
+
+      .isIntro {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: .3s ease;
+
+        .intro {
+          p:nth-child(1) {
+            margin: 20px 0;
+            font-size: 40px;
+            font-weight: 800;
+          }
+
+          p:nth-child(2) {
+            display: none;
+          }
+
+          #play {
+            background-color: #e056fd;
+            color: black;
+          }
+
+          #play:active {
+            background-color: #be2edd;
+          }
+        }
+      }
+
+      .isScore {
+        transition: 1s ease;
+
+        .dashboard {
+          p {
+            font-size: 30px;
+            font-weight: 800;
+          }
+
+          .score {
+            text-align: center;
+            border: 2px solid black;
+            margin: 0 20px;
+
+            span {
+              font-size: 50px;
+              font-weight: 800;
+            }
+
+            .user-score,
+            .bot-score {
+              display: inline-block;
+              padding: 5px 10px;
+            }
+          }
+        }
+      }
+
+      .isMatch {
+        margin-top: 30px;
+        transition: 1s ease;
+
+        .title {
+          margin: 20px 0;
+          font-size: 30px;
+          font-weight: 800;
+
+        }
+
+        .hands {
+          .player-hand {
+            width: 150px;
+            margin-right: 40px;
+            transform: rotate(30deg);
+          }
+
+          .bot-hand {
+            width: 150px;
+            margin-left: 40px;
+            transform: rotate(-30deg) scaleX(-1);
+          }
+        }
+
+        .options {
+          margin: 20px 0;
+
+          button {
+            margin: 0 7px;
+          }
+
+          #rock {
+            background-color: #e74c3c;
+            color: black;
+          }
+
+          #rock:active {
+            background-color: #c0392b;
+          }
+
+          #paper {
+            background-color: #3498db;
+            color: black;
+          }
+
+          #paper:active {
+            background-color: #2980b9;
+          }
+
+          #scissor {
+            background-color: #e67e22;
+            color: black; 
+          }
+
+          #scissor:active {
+            background-color: #d35400;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+
+  .main {
+    font-size: calc(100%-20%);
+
+    .isIntro {
+      p:nth-child(1) {
+        display: none !important;
+      }
+
+      p:nth-child(2) {
+        font-size: 40px !important;
+        margin-bottom: 20px;
+        display: block !important;
+      }
+
+      #play {
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+@keyframes shakePlayer {
+  0% {
+    transform: rotate(30deg) translateX(0);
+  }
+
+  15% {
+    transform: rotate(30deg) translateX(-10px);
+  }
+
+  30% {
+    transform: rotate(30deg) translateX(0);
+  }
+
+  45% {
+    transform: rotate(30deg) translateX(-25px);
+  }
+
+  60% {
+    transform: rotate(30deg) translateX(0);
+  }
+
+  95% {
+    transform: rotate(30deg) translateX(-40px);
+  }
+
+  100% {
+    transform: rotate(30deg) translateX(0);
+  }
+}
+
+@keyframes shakeBot {
+  0% {
+    transform: rotate(-30deg) scaleX(-1) translateX(0);
+  }
+
+  15% {
+    transform: rotate(-30deg) scaleX(-1) translateX(-10px);
+  }
+
+  30% {
+    transform: rotate(-30deg) scaleX(-1) translateX(0);
+  }
+
+  45% {
+    transform: rotate(-30deg) scaleX(-1) translateX(-25px);
+  }
+
+  60% {
+    transform: rotate(-30deg) scaleX(-1) translateX(0);
+  }
+
+  95% {
+    transform: rotate(-30deg) scaleX(-1) translateX(-40px);
+  }
+
+  100% {
+    transform: rotate(-30deg) scaleX(-1) translateX(0);
+  }
+}
+
+.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fadeIn {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.t-top {
+  transform: scale(1.5) translate(-30%, 0) !important;
+  opacity: 0;
+  pointer-events: none;
+}

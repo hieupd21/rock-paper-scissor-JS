@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;800&display=swap">
+  <link rel="stylesheet" href="assets/css/lib-responsive.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>ROCK-PAPER-SCISSOR</title>
+</head>
+<body>
+
+  <div class="container wide main">
+    <div class="row isIntro">
+      <div class="col p-12 t-12 m-12 intro text-center">
+        <p>ROCK ✊ - PAPER 🖐 - SCISSOR ✌️</p>
+        <p>✊ - 🖐 - ✌️</p>
+        <button id="play">Let's play</button>
+      </div>
+    </div>
+
+    <div class="row isScore d-flex jc-center fadeOut">
+      <div class="col p-6 t-12 m-12 dashboard d-flex jc-center ai-center">
+        <p>👦 USER</p>
+        <div class="score">
+          <span class="user-score">0</span>
+          <span>:</span>
+          <span class="bot-score">0</span>
+        </div>
+        <p>BOT 🤖</p>
+      </div>
+    </div>
+
+    <div class="row isMatch text-center fadeOut">
+      <p class="col p-12 t-12 m-12 title">CHOOSE AN OPTION</p>
+
+      <div class="col p-12 t-12 m-12 hands d-flex jc-center">
+        <img src="assets/img/rock.jpg" alt="" class="player-hand">
+        <img src="assets/img/rock.jpg" alt="" class="bot-hand">
+      </div>
+
+      <div class="col p-12 t-12 m-12 options">
+        <button id="rock">ROCK</button>
+        <button id="paper">PAPER</button>
+        <button id="scissor">SCISSOR</button>
+      </div>
+
+      <p class="col p-12 t-12 m-12 title" id="result">&nbsp</p>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  
+</body>
+</html>
